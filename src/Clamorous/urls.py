@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'base_info/', include('apps.base_info.urls')),
     url(r'commu_info/',include('apps.commu_info.urls')),
     url(r'employee/',include('apps.employee.urls')),
+    url(r'spider/',include('apps.spider.urls')),
 ]

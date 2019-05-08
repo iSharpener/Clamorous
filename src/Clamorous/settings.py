@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'apps.base_info',
     'apps.commu_info',
     'apps.employee',
+    'apps.spider',
 
 ]
 
@@ -52,6 +53,10 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+MIDDLEWARE_CLASSES = (
+    'django.middleware.gzip.GZipMiddleware',
+)
 
 ROOT_URLCONF = 'Clamorous.urls'
 
@@ -82,7 +87,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'information_platform',
         'USER': 'root',
-        'PASSWORD': 'root',
+        'PASSWORD': 'buct.it_cs/pg',
         'HOST': '123.207.152.82',
         'PORT': '3306',
     }
