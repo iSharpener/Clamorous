@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'employee/', include('apps.employee.urls')),
     url(r'activity/', include('apps.get_activity_info.urls')),
     url(r'^wx', include('apps.wechat.urls')),
+    url(r'^spider/',include('apps.spider.urls')),
 ]

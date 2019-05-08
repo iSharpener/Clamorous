@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'apps.employee',
     'apps.get_activity_info',
     'apps.wechat',
+    'apps.spider',
     'import_export',
 ]
 
