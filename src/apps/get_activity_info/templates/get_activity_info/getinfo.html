@@ -1,0 +1,173 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>活动报名</title>
+    <!-- 引入 WeUI -->
+    <link rel="stylesheet" href="{% static 'get_activity_info/css/weui.css' %}" />
+    <link rel="stylesheet" href="{% static 'get_activity_info/css/example.css' %}">
+</head>
+
+<body>
+    <!-- 使用 -->
+    <div class="container" id="container">
+        <div class="page home js_show">
+            <div class="page__hd">
+                <h1 class="page__title">活动报名</h1>
+                <p class="page__desc">请认真填写相关信息！</p>
+            </div>
+            <div class="page__bd page__bd_spacing">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
+                    <div class="weui-cell__bd">
+                        <input required id="stu_name" class="weui-input" type="text" placeholder="请输入姓名">
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">班级</label></div>
+                    <div class="weui-cell__bd">
+                        <input id="stu_class" class="weui-input" type="text" placeholder="请输入班级">
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">学号</label></div>
+                    <div class="weui-cell__bd">
+                        <input id="stu_id" class="weui-input" type="text" placeholder="请输入学号">
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">活动名称</label></div>
+                    <div class="weui-cell__bd">
+                        <label id="activity_name" class="weui-input">{{act_name}}</label>
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">活动时间</label></div>
+                    <div class="weui-cell__bd">
+                        <label id="activity_time" class="weui-input">{{act_time}}</label>
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_select weui-cell_select-after">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label">参与身份</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <select id="status" class="weui-select" name="select1">
+                            <option value="" style="display: none"></option>
+                            <option value="参与人员">参与人员</option>
+                            <option value="工作人员">工作人员</option>
+                            <option value="观众">观众</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="weui-btn-area">
+                    <a class="weui-btn weui-btn_primary" href="javascript:void(0)" id="submit"
+                        onclick="get_value()">提交</a>
+                </div>
+            </div>
+            <div class="weui-msg__extra-area">
+                <div class="weui-footer">
+                    <p class="weui-footer__text">BUCT © 2019 研究生培养信息管理系统</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function get_value() {
+            var stu_name = document.getElementById("stu_name").value;
+            var stu_class = document.getElementById("stu_class").value;
+            var stu_id = document.getElementById("stu_id").value;
+            var activity_name = "{{act_name}}";
+            var activity_time = "{{act_time}}";
+            var status = document.getElementById("status").value;
+            if (stu_name == "") {
+                alert("姓名不能为空！");
+                return false;
+            }
+            else if (stu_class == "") {
+                alert("班级不能为空");
+                return false;
+            }
+            else if (stu_id == "") {
+                alert("学号不能为空");
+                return false;
+            }
+            else if (status == "") {
+                alert("参与身份不能为空");
+                return false;
+            }
+            else {
+                // document.write(stu_name);
+                // document.write("<br>");
+                // document.write(stu_class);
+                // document.write("<br>");
+                // document.write(stu_id);
+                // document.write("<br>");
+                // document.write(activity_name);
+                // document.write("<br>");
+                // document.write(activity_time);
+                // document.write("<br>");
+                // document.write(status);
+
+                var year = activity_time.substring(0, 4)
+                var month = activity_time.substring(5, 7)
+                var day = activity_time.substring(8, 10)
+                var newtiem = year + '-' + month + '-' + day
+                // document.write("<br>");
+                // document.write(year);
+                // document.write("<br>");
+                // document.write(month);
+                // document.write("<br>");
+                // document.write(day);
+                // document.write("<br>");
+                // document.write(newtiem);
+
+                // var data = {
+                //     'stu_name': stu_name,
+                //     'stu_id': stu_id,
+                //     'stu_class': stu_class,
+                //     'act_name': activity_name,
+                //     'act_time': newtiem,
+                //     'stu_status': status
+                // }
+                var parames = new Array();
+                parames.push({ name: "stu_name", value: stu_name });
+                parames.push({ name: "stu_id", value: stu_id });
+                parames.push({ name: "stu_class", value: stu_class });
+                parames.push({ name: "act_name", value: activity_name });
+                parames.push({ name: "act_time", value: newtiem });
+                parames.push({ name: "stu_status", value: status });
+
+
+                Post("http://wtage.cn/activity/success", parames);
+
+                return false;
+            }
+
+            function Post(URL, PARAMTERS) {
+                //创建form表单
+                var temp_form = document.createElement("form");
+                temp_form.action = URL;
+                //如需打开新窗口，form的target属性要设置为'_blank'
+                temp_form.target = "_self";
+                temp_form.method = "post";
+                temp_form.style.display = "none";
+                //添加参数
+                for (var item in PARAMTERS) {
+                    var opt = document.createElement("textarea");
+                    opt.name = PARAMTERS[item].name;
+                    opt.value = PARAMTERS[item].value;
+                    temp_form.appendChild(opt);
+                }
+                document.body.appendChild(temp_form);
+                //提交数据
+                temp_form.submit();
+            }
+        }
+    </script>
+</body>
+
+</html>

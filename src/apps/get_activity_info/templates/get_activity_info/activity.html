@@ -1,0 +1,71 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>活动报名连接生成</title>
+    <!-- 引入 WeUI -->
+    <link rel="stylesheet" href="{% static 'get_activity_info/css/weui.css' %}" />
+    <link rel="stylesheet" href="{% static 'get_activity_info/css/example.css' %}">
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="page home js_show">
+            <div class="page__hd">
+                <h1 class="page__title">活动报名链接生成</h1>
+            </div>
+            <div class="page__bd page__bd_spacing">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">活动名称</label></div>
+                    <div class="weui-cell__bd">
+                        <input id="activity_name" class="weui-input" type="text" placeholder="请输入活动名称">
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label for="" class="weui-label">活动日期</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input id="activity_date" class="weui-input" type="date" value="">
+                    </div>
+                </div>
+                <div class="weui-btn-area">
+                    <!-- <a class="weui-btn weui-btn_primary" href="javascript:" id="submit">提交</a> -->
+                    <a class="weui-btn weui-btn_primary" href="javascript:" id="submit" onclick="get_value()">提交</a>
+                </div>
+
+            </div>
+            <div class="weui-msg__extra-area">
+                <div class="weui-footer">
+                    <p class="weui-footer__text">BUCT © 2019 研究生培养信息管理系统</p>
+                </div>
+            </div>
+    </div>
+    </div>
+    <script>
+        function get_value() {
+            var activity_name = document.getElementById("activity_name").value;
+            var activity_date = document.getElementById("activity_date").value;
+            arr = activity_date.split("-");
+            activity_date = arr[0] + "年" + arr[1] + "月" + arr[2] + "日"
+            if (activity_name == "") {
+                alert("活动名称不能为空");
+                return false;
+            }
+            else if (activity_date == "") {
+                alert("活动时间不能为空");
+                return false;
+            }
+            else {
+                window.location.href = "gai/" + activity_name + "/" + activity_date
+                // document.write(activity_name);
+                // document.write(activity_date);
+            }
+        }
+    </script>
+</body>
+
+</html>

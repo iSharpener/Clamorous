@@ -1,0 +1,41 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>你已报过名</title>
+    <!-- 引入 WeUI -->
+    <link rel="stylesheet" href="{% static 'get_activity_info/css/weui.css' %}" />
+    <link rel="stylesheet" href="{% static 'get_activity_info/css/example.css' %}">
+</head>
+
+
+<body>
+    <div class="container" id="container">
+        <div class="page msg_warn js_show">
+            <div class="weui-msg">
+                <div class="weui-msg__icon-area"><i class="weui-icon-warn weui-icon_msg"></i></div>
+                <div class="weui-msg__text-area">
+                    <h2 class="weui-msg__title">你已报过名！请勿重复报名！</h2>
+                </div>
+                <!-- <div class="weui-msg__tips-area">
+                    <p class="weui-msg__tips"></p>
+                </div> -->
+                <!-- <div class="weui-msg__opr-area">
+                    <p class="weui-btn-area">
+                        <a href="javascript:history.back();" class="weui-btn weui-btn_default">返回</a>
+                    </p>
+                </div> -->
+                <div class="weui-msg__extra-area">
+                    <div class="weui-footer">
+                        <p class="weui-footer__text">BUCT © 2019 研究生培养信息管理系统</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>>

@@ -1,0 +1,106 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>已参加活动</title>
+    <!-- 引入 WeUI -->
+    <link rel="stylesheet" href="{% static 'get_activity_info/css/weui.css' %}" />
+    <link rel="stylesheet" href="{% static 'get_activity_info/css/example.css' %}">
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <div class="page home js_show">
+            <div class="page__hd">
+                <h1 class="page__title">已参加活动</h1>
+
+            </div>
+            <div class="page__bd page__bd_spacing">
+                <!-- <div class="weui-cells__title">德育活动   参加个数：{{list1|length}}</div>
+                <div class="weui-cells__title">参加个数：{{list1|length}}</div> -->
+
+                <div class="weui-panel weui-panel_access">
+                    <div class="weui-panel__bd">
+                        <div class="weui-cell">
+                            <div class="weui-cell__bd">
+                                <p style="font-size: 18px;color: #3cc51f;">项目化加分活动</p>
+                            </div>
+                            <div class="weui-cell__ft" style="font-size: 18px;">参加个数：{{list1|length}}</div>
+                        </div>
+                        {% for items in list1 %}
+                        <div class="weui-media-box weui-media-box_text">
+                            <h4 class="weui-media-box__title" style="font-size: 17px;">{{items.act_name}}</h4>
+                            <p class="weui-media-box__desc">姓名：{{items.stu_name}}</p>
+                            <p class="weui-media-box__desc">学号：{{items.stu_id}}</p>
+                            <p class="weui-media-box__desc">参与身份：{{items.stu_status}}</p>
+                            <p class="weui-media-box__desc">活动分数：{{items.act_score}}</p>
+                            <p class="weui-media-box__desc">活动时间：{{items.act_time}}</p>
+                            <p class="weui-media-box__desc">名次：{{items.stu_rank}}</p>
+                        </div>
+                        {% endfor %}
+                        <!-- <div class="weui-media-box weui-media-box_text">
+                            <h4 class="weui-media-box__title">标题一</h4>
+                            <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="weui-panel weui-panel_access">
+                    <div class="weui-panel__bd">
+                        <div class="weui-cell">
+                            <div class="weui-cell__bd">
+                                <p style="font-size: 18px;color: #3cc51f;">德育活动</p>
+                            </div>
+                            <div class="weui-cell__ft" style="font-size: 18px;">参加个数：{{list2|length}}</div>
+                        </div>
+                        {% for items in list2 %}
+                        <div class="weui-media-box weui-media-box_text">
+                            <h4 class="weui-media-box__title" style="font-size: 17px;">{{items.act_name}}</h4>
+                            <p class="weui-media-box__desc">姓名：{{items.stu_name}}</p>
+                            <p class="weui-media-box__desc">学号：{{items.stu_id}}</p>
+                            <p class="weui-media-box__desc">活动分数：{{items.act_score}}</p>
+                            <p class="weui-media-box__desc">活动时间：{{items.act_time}}</p>
+                        </div>
+                        {% endfor %}
+                        <!-- <div class="weui-media-box weui-media-box_text">
+                            <h4 class="weui-media-box__title">标题一</h4>
+                            <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="weui-panel weui-panel_access">
+                    <div class="weui-panel__bd">
+                        <div class="weui-cell">
+                            <div class="weui-cell__bd">
+                                <p style="font-size: 18px;color: #3cc51f;">学术报告</p>
+                            </div>
+                            <div class="weui-cell__ft" style="font-size: 18px;">参加个数：{{list3|length}}</div>
+                        </div>
+                        {% for items in list3 %}
+                        <div class="weui-media-box weui-media-box_text">
+                            <h4 class="weui-media-box__title" style="font-size: 17px;">{{items.act_name}}</h4>
+                            <p class="weui-media-box__desc">姓名：{{items.stu_name}}</p>
+                            <p class="weui-media-box__desc">学号：{{items.stu_id}}</p>
+                            <p class="weui-media-box__desc">活动时间：{{items.act_time}}</p>
+                        </div>
+                        {% endfor %}
+                        <!-- <div class="weui-media-box weui-media-box_text">
+                            <h4 class="weui-media-box__title">标题一</h4>
+                            <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="weui-footer">
+                    <p class="weui-footer__text">BUCT © 2019 研究生培养信息管理系统</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>>

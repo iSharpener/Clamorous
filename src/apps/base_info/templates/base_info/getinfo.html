@@ -1,0 +1,160 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>WeUI</title>
+    <!-- 引入 WeUI -->
+    <link rel="stylesheet" href="{% static 'base_info/css/weui.css' %}" />
+    <link rel="stylesheet" href="{% static 'base_info/css/example.css' %}">
+</head>
+
+<body>
+    <!-- 使用 -->
+    <div class="container" id="container">
+        <div class="page home js_show">
+            <div class="page__hd">
+                <h1 class="page__title">活动信息统计</h1>
+                <p class="page__desc">请按照要求填写相关信息！</p>
+            </div>
+            <div class="page__bd page__bd_spacing">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
+                    <div class="weui-cell__bd">
+                        <input required id="stu_name" class="weui-input" type="text" placeholder="请输入姓名">
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">班级</label></div>
+                    <div class="weui-cell__bd">
+                        <input id="stu_class" class="weui-input" type="text" placeholder="请输入班级">
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">学号</label></div>
+                    <div class="weui-cell__bd">
+                        <input id="stu_id" class="weui-input" type="text" placeholder="请输入学号">
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">活动名称</label></div>
+                    <div class="weui-cell__bd">
+                        <input id="activity_name" class="weui-input" type="text" placeholder="请输入活动名称">
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label for="" class="weui-label">活动日期</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input id="activity_date" class="weui-input" type="date" value="">
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_select weui-cell_select-after">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label">参与身份</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <select id="status" class="weui-select" name="select1">
+                            <option value="" style="display: none"></option>
+                            <option value="1">参与人员</option>
+                            <option value="2">工作人员</option>
+                            <option value="3">观众</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <label>
+                        <input id="checkrankbox" type="checkbox" class="weui-agree__checkbox" onclick="show()">
+                        若获得名次请勾选此项
+                    </label>
+                </div>
+                <div id="rank" style="display: none" class="weui-cell">
+                    <div class="weui-cell weui-cell_select weui-cell_select-after">
+                        <div class="weui-cell__hd">
+                            <label for="" class="weui-label">名次</label>
+                        </div>
+                        <div class="weui-cell__bd">
+                            <select id="ranking" class="weui-select" name="select2">
+                                <option value="" style="display: none"></option>
+                                <option value="1">第一名</option>
+                                <option value="2">第二名</option>
+                                <option value="3">第三名</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="weui-btn-area">
+                    <a class="weui-btn weui-btn_primary" href="javascript:" id="submit" onclick="get_value()">提交</a>
+                </div>
+            </div>
+            <div class="page__ft">
+                <label style="color:#888;font-size: 12px">BUCT © 2019 研究生培养信息管理系统</label>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script>
+        function show() {
+            document.getElementById("rank").style.display = document.getElementById("rank").style.display == "block" ? "none" : "block";
+        }
+        function get_value() {
+            var stu_name = document.getElementById("stu_name").value;
+            var stu_class = document.getElementById("stu_class").value;
+            var stu_id = document.getElementById("stu_id").value;
+            var activity_name = document.getElementById("activity_name").value;
+            var activity_date = document.getElementById("activity_date").value;
+            var status = document.getElementById("status").value;
+            var ranking = document.getElementById("ranking").value;
+            if (stu_name == "") {
+                alert("姓名不能为空！");
+                return false;
+            }
+            else if (stu_class == "") {
+                alert("班级不能为空");
+                return false;
+            }
+            else if (stu_id == "") {
+                alert("学号不能为空");
+                return false;
+            }
+            else if (activity_name == "") {
+                alert("活动名称不能为空");
+                return false;
+            }
+            else if (activity_date == "") {
+                alert("活动时间不能为空");
+                return false;
+            }
+            else if (status == "") {
+                alert("参与身份不能为空");
+                return false;
+            }
+            else if (document.getElementById("checkrankbox").checked == true && ranking == "") {
+                alert("名次不能为空");
+                return false;
+            }
+            else {
+                document.write(stu_name);
+                document.write(stu_class);
+                document.write(stu_id);
+                document.write(activity_name);
+                document.write(activity_date);
+                document.write(status);
+                // document.write(activity_date);
+            }
+            // document.write(activity_date);
+        }
+    </script>
+</body>
+
+</html>

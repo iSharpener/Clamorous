@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class EmployeeInfo(models.Model):
     id = models.AutoField(primary_key=True)
     company_name = models.CharField(max_length=255)
@@ -15,6 +16,7 @@ class EmployeeInfo(models.Model):
 
     def __str__(self):
         return self.company_name
+
     class Meta:
         managed = False
         db_table = 'employee_info'
