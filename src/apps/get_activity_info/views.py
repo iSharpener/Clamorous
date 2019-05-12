@@ -24,6 +24,9 @@ def post_activity_info(request):
         if flag:
             bindwechardata = BindWechat.objects.filter(
                 stu_openid=openid).values()
+
+            if not bindwechardata:
+                return render(request, 'get_activity_info/warn_showinfo.html')
             stuid = bindwechardata[0]['stu_id']
             list1 = ParticipationRecord.objects.filter(stu_id=stuid).values()
             list2 = MoralActivity.objects.filter(stu_id=stuid).values()

@@ -96,8 +96,10 @@ def autoreply(request):
                 content = "编写中，尚未完成"
                 replyMsg = reply.TextMsg(toUser, fromUser, content)
                 return replyMsg.send()
-        print("暂且不处理")
-        return Msg().send()
+        else:
+            return "success"
+            print("暂且不处理")
+        # return Msg().send()
     except (Exception) as Argment:
         return Argment
 
