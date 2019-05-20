@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 's4mp10ht*_r49)vdzydx0k!tkp=5eno88_9+q&!j7h%p%9+397'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 ####################################################################################
 #(Django默认设置)
 # DEFAULT_CHARSET = 'utf-8'

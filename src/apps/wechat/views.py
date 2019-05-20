@@ -50,13 +50,17 @@ def autoreply(request):
 
                     temp = recMsg.Content[3:]
                     data = BaseInformation.objects.filter(stu_id=temp).values()
+
                     # print(data)
-                    if data is not None:
+                    if len(data) != 0:
+                        # print(len(data))
+                        # if data is None:
+                        #     print(123)
                         bdata = BindWechat.objects.filter(
                             Q(stu_id=temp) | Q(stu_openid=toUser)).values()
                         # print(bdata)
                         if bdata.exists():
-                            content = "当前微信号或学号已被绑定，请联系管理员！"
+                            content = "当前微信号或学号已被绑定，如有疑问请联系管理员！"
                         else:
                             # print(data[0]['stu_id'])
                             binddata = BindWechat()
@@ -67,9 +71,11 @@ def autoreply(request):
                             binddata.save()
                             content = "绑定成功!"
                     else:
+
                         content = "学号不存在！请重新输入"
                 else:
                     # print(recMsg.Content)
+                    print(2)
                     content = recMsg.Content
                 replyMsg = reply.TextMsg(toUser, fromUser, content)
                 return replyMsg.send()
