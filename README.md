@@ -19,7 +19,7 @@
         |    │       ├── static       // 静态文件（css）
         |    │       ├── templates    // 页面模版文件
         |    │       ├── _init_.py    // base_info app的初始化文件
-        |    │       ├── admin.py     // base_info app的管理文件
+        |    │       ├── admin.py     // base_info app的后台数据管理平台的代码实现
         |    │       ├── models.py    // base_info app的数据模型
         |    │       ├── views.py     // base_info app的后台逻辑代码
         |    │       ├── apps.py      // base_info app的配置文件
@@ -29,7 +29,7 @@
         |    │       ├── static       // 静态文件（css）
         |    │       ├── templates    // 页面模版文件
         |    │       ├── _init_.py    // get_activity_info app的初始化文件
-        |    │       ├── admin.py     // get_activity_info app的管理文件
+        |    │       ├── admin.py     // get_activity_info app的后台数据管理平台的代码实现
         |    │       ├── models.py    // get_activity_info app的数据模型
         |    │       ├── commen.py    // 后台管理平台的数据导入与导出功能
         |    │       ├── getopenid.py // openid的获取
@@ -39,7 +39,7 @@
         |    │       
         │    └── wechat               // 微信公众号后台开发app  
         |           ├── _init_.py     // wechat app的初始化文件
-        |           ├── admin.py      // wechat app的管理文件
+        |           ├── admin.py      // wechat app的后台数据管理平台的代码实现
         |           ├── apps.py       // wechat app的配置文件
         |           ├── basic.py      // access token的获取及第三方页面连接的重定向
         |           ├── material.py   // 微信公众平台素材管理模块
