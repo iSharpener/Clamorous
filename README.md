@@ -10,7 +10,7 @@
     腾讯云服务器(服务器地址:123.207.152.82)
     python3.6
 + **项目目录结构** 
-(```)
+
     ├── Readme.md                     // help
     └──src                            // 代码资源文件
         ├── apps                      // Django项目中的各个app
@@ -58,4 +58,4 @@
         |       └── wsgi.py           // Django中的异步处理
         │
         └── manage.py                 // Django中的manage文件    
-  (```)
+
