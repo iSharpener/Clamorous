@@ -10,21 +10,21 @@
     腾讯云服务器(服务器地址:123.207.152.82)
     python3.6
 + **项目目录结构** 
-  
+  ```
     ├── Readme.md                     // help
-    └──src                            // 代码资源文件  
-        ├── apps                      // Django项目中的各个app   
+    └──src                            // 代码资源文件
+        ├── apps                      // Django项目中的各个app
         │    ├── base_info            // 学生基本信息app 
         |    │       ├── static       // 静态文件（css）
         |    │       ├── templates    // 页面模版文件
-        |    │       ├── _init_.py    // base_info app的初始化文件 
-        |    │       ├── admin.py     // base_info app的管理文件 
-        |    │       ├── models.py    // base_info app的数据模型 
+        |    │       ├── _init_.py    // base_info app的初始化文件
+        |    │       ├── admin.py     // base_info app的管理文件
+        |    │       ├── models.py    // base_info app的数据模型
         |    │       ├── views.py     // base_info app的后台逻辑代码
         |    │       ├── apps.py      // base_info app的配置文件
         |    │       └── urls.py      // base_info app的url配置
         |    │       
-        │    ├── get_activity_info    // 各种活动项目app  
+        │    ├── get_activity_info    // 各种活动项目app
         |    │       ├── static       // 静态文件（css）
         |    │       ├── templates    // 页面模版文件
         |    │       ├── _init_.py    // get_activity_info app的初始化文件
@@ -58,4 +58,4 @@
         |       └── wsgi.py           // Django中的异步处理
         │
         └── manage.py                 // Django中的manage文件  
-
+```
