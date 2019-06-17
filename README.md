@@ -63,10 +63,12 @@
 # 业务介绍
 + **后台数据管理平台**
 [后台数据管理平台地址](http://www.isharpen.cn:8080/admin/)
-+ **各个面及描述**
-姓名|技能|排行
---|:--:|--:
-刘备|哭|大哥
-关羽|打|二哥
-张飞|骂|三弟
++ **各个面及描述**  
+
+Name | Academy | score 
+- | :-: | -: 
+Harry Potter | Gryffindor| 90 
+Hermione Granger | Gryffindor | 100 
+Draco Malfoy | Slytherin | 90
+
 
