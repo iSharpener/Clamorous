@@ -1,6 +1,6 @@
-# Clamorous
-#项目描述
-项目名称：Clamorous，研究生培养信息系统是基于微信公众平台的研究生培养信息管理系统，[github项目地址](https://github.com/iSharpener/Clamorous)，项目第一负责人：魏昀琦
+
+# 项目描述
+    项目名称：Clamorous研究生培养信息系统是基于微信公众平台的研究生培养信息管理系统，[github项目地址](https://github.com/iSharpener/Clamorous)，项目第一负责人：魏昀琦
 --------------------------------
 #如何运行
 + **开发环境配置** Django 1.11.1 微信公众开发平台，腾讯云服务器(服务器地址:123.207.152.82),python3.6
