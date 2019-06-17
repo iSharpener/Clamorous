@@ -61,14 +61,12 @@
         └── manage.py                 // Django中的manage文件```
 -----------------------------------------------------------------
 # 业务介绍
-+ **后台数据管理平台**
+### 后台数据管理平台  
 [后台数据管理平台地址](http://www.isharpen.cn:8080/admin/)
-+ **各个面及描述**  
-
-Name | Academy | score 
-- | :-: | -: 
-Harry Potter | Gryffindor| 90 
-Hermione Granger | Gryffindor | 100 
-Draco Malfoy | Slytherin | 90
-
+### 各个面及描述  
+| Name | Academy | score | 
+| - | :-: | -: | 
+| Harry Potter | Gryffindor| 90 | 
+| Hermione Granger | Gryffindor | 100 | 
+| Draco Malfoy | Slytherin | 90 |
 
