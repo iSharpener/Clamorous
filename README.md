@@ -64,9 +64,9 @@
 ### 后台数据管理平台  
 [后台数据管理平台地址](http://www.isharpen.cn:8080/admin/)
 ### 各个面及描述  
-| Name | Academy | score | 
+| 页面目录 | 页面描述 | 页面链接 | 
 | - | :-: | -: | 
-| Harry Potter | Gryffindor| 90 | 
-| Hermione Granger | Gryffindor | 100 | 
-| Draco Malfoy | Slytherin | 90 |
+| 后台数据管理平台 | 后台数据的管理| http://www.isharpen.cn:8080/admin/ | 
+| 报名链接生成页面 | 生成报名链接页面 | http://wtage.cn/activity/link | 
+
 
